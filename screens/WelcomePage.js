@@ -9,7 +9,6 @@ import { StyleSheet, Text,Image,Alert,Button, View ,
 import {useDimensions, useDeviceOrientation} from "@react-native-community/hooks"
 import AppButton from '../components/AppButton';
 export default function App() {
-  
   return (
     <SafeAreaView style={styles.container}>
 

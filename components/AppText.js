@@ -3,7 +3,7 @@ import { Text ,StyleSheet, Platform} from 'react-native'
 export default function AppText(props) {
     return (
       <Text
-      style={styles.text}>
+      style={[styles.text,props.style]}>
           {props.children}
       </Text>  
     );
@@ -11,16 +11,16 @@ export default function AppText(props) {
 
 const styles= StyleSheet.create({
     text:{
-        
+        fontSize:18,
         ...Platform.select({
             ios:{
-                fontSize:20,
+               
                 fontFamily:"Avenir",
                 fontStyle:'italic'
         
             },
             android:{
-                fontSize:18,
+                
                 fontFamily:"Roboto",
             }
         })
