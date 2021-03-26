@@ -10,15 +10,17 @@ export default function UserItem(props) {
             underlayColor={'#f8f4f4'}
             onPress={props.onPress}>
             <View style={[styles.container,props.style]}>
-                <Image style={styles.image}
-                source={props.image}></Image>
+
+                {/* chose to render icon or image not both */}
+                {props.IconComponent}
+                {props.image&&<Image style={styles.image} source={props.image}/>}
 
                 {/* layout column  */}
                 <View style={styles.text}>
                     <AppText style={styles.title}>
                         {props.title}</AppText>
-                    <AppText style={styles.subtitle}>
-                        {props.subtitle}</AppText>
+                    {props.subtitle&&<AppText style={styles.subtitle}>
+                        {props.subtitle}</AppText>}
                 </View>
             
         </View>
@@ -38,12 +40,12 @@ const styles=StyleSheet.create({
         height:70,
         width:70,
         borderRadius:35,
-        marginRight:10,
+        
         //marginTop:10
     },
     text:{
-        marginRight:15,
-        marginTop:5,
+        justifyContent:'center',
+        marginLeft:10
     },
     title:{
         fontWeight:'500'

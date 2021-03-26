@@ -14,7 +14,7 @@ const styles= StyleSheet.create({
         fontSize:18,
         ...Platform.select({
             ios:{
-               
+                
                 fontFamily:"Avenir",
                 fontStyle:'italic'
         

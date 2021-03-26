@@ -44,7 +44,7 @@ export default function Messages() {
                     <ItemDeleteArea onPress={()=>deleteMessage(item)}/>}/>
     );
     return (
-        <SafeScreen style={styles.container}>        
+        <SafeScreen>        
             <FlatList
                 style={styles.view}
                 data={messages}
