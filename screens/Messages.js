@@ -13,6 +13,7 @@ import UserItem from '../components/UserItem'
 
 
 export default function Messages() {
+    const [refresh, setRefresh] = useState(false)
     const [messages, setMessages] = useState([
     {
         id:1,
@@ -51,6 +52,21 @@ export default function Messages() {
                 keyExtractor={message=>message.id.toString()}
                 renderItem={renderItem}
                 ItemSeparatorComponent={()=><ListSeparator/>}
+                refreshing={refresh}
+                onRefresh={()=>{
+                    setMessages([{
+                        id:1,
+                        title:'refreshed1',
+                        description:'D1refreshed1',
+                        image:require('../assets/maleAvatar.jpg')
+                    },
+                    {
+                        id:2,
+                        title:'Refreshed2',
+                        description:'D2Refreshed2',
+                        image:require('../assets/femaleAvatar.jpg')
+                    }])
+                }}
                 >
             </FlatList>
 
