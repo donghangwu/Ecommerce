@@ -1,11 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { FlatList, Platform, SafeAreaView, StatusBar, 
     StyleSheet,View } from 'react-native'
+import ItemDeleteArea from '../components/ItemDeleteArea';
 import ListSeparator from '../components/ListSeparator';
 import SafeScreen from '../components/SafeScreen';
 import UserItem from '../components/UserItem'
 
-const message=[
+// const messages=[
+    
+
+// ]
+
+
+export default function Messages() {
+    const [messages, setMessages] = useState([
     {
         id:1,
         title:'T1',
@@ -17,29 +25,35 @@ const message=[
         title:'T2',
         description:'D2',
         image:require('../assets/femaleAvatar.jpg')
-    },
+    }])
 
-]
-export default function Messages() {
+    const deleteMessage=message=>{
+        //delete the message from messages ->current state
+        const newMessages=messages.filter(m=>m.id!==message.id)
+        setMessages(newMessages)
+        //delete message from the server side
+    }
     const renderItem = ({item})=>(
         <UserItem
                 title={item.title}
                 subtitle={item.description}
                 image={item.image} 
-                onPress={()=>console.log('Message selected',item)}/>
+                onPress={()=>console.log('Message selected',item)}
+                renderRightActions={()=>
+                    <ItemDeleteArea onPress={()=>deleteMessage(item)}/>}/>
     );
     return (
-        <SafeScreen style={styles.container}>
+        <SafeScreen style={styles.container}>        
             <FlatList
-                
-                data={message}
+                style={styles.view}
+                data={messages}
                 //unique key for each element in array
                 keyExtractor={message=>message.id.toString()}
                 renderItem={renderItem}
                 ItemSeparatorComponent={()=><ListSeparator/>}
                 >
             </FlatList>
-        
+
         </SafeScreen>
         
     )
@@ -49,8 +63,8 @@ const styles= StyleSheet.create({
   list:{
     backgroundColor: '#f9c2ff',
   },
-  container:{
-      marginLeft:20
+  view:{
+      paddingLeft:10
   }
 
 })

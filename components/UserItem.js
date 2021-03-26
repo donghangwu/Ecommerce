@@ -1,12 +1,13 @@
 import React from 'react'
 import { View,StyleSheet,Image, TouchableHighlight } from 'react-native'
 import AppText from './AppText'
-
+import {Swipeable} from 'react-native-gesture-handler'
 export default function UserItem(props) {
     return (
         //layout row->defult is column layout
+        <Swipeable renderRightActions={props.renderRightActions}>        
         <TouchableHighlight 
-            underlayColor={'lightgrey'}
+            underlayColor={'#f8f4f4'}
             onPress={props.onPress}>
             <View style={[styles.container,props.style]}>
                 <Image style={styles.image}
@@ -22,6 +23,7 @@ export default function UserItem(props) {
             
         </View>
         </TouchableHighlight>
+        </Swipeable>
         
     )
 }
