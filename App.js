@@ -14,13 +14,14 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AppButton from './components/AppButton.js'
 import AppCard from './components/AppCard';
 import DetailsScreen from './screens/DetailsScreen';
+import Messages from './screens/Messages';
 
 export default function App() {
   const name=require('./assets/aa.png')
   console.log(name)
   return (
 
-      <ViewImage/>
+      <Messages/>
 
    
   );

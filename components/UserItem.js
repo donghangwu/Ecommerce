@@ -1,40 +1,47 @@
 import React from 'react'
-import { View,StyleSheet,Image } from 'react-native'
+import { View,StyleSheet,Image, TouchableHighlight } from 'react-native'
 import AppText from './AppText'
 
 export default function UserItem(props) {
     return (
         //layout row->defult is column layout
-        <View style={styles.container}>
-            <Image style={styles.image}
-            source={props.image}></Image>
-            {/* layout column  */}
-            <View style={styles.text}>
-                <AppText style={styles.title}>
-                    {props.title}</AppText>
-                <AppText style={styles.subtitle}>
-                    {props.subtitle}</AppText>
-            </View>
+        <TouchableHighlight 
+            underlayColor={'lightgrey'}
+            onPress={props.onPress}>
+            <View style={[styles.container,props.style]}>
+                <Image style={styles.image}
+                source={props.image}></Image>
+
+                {/* layout column  */}
+                <View style={styles.text}>
+                    <AppText style={styles.title}>
+                        {props.title}</AppText>
+                    <AppText style={styles.subtitle}>
+                        {props.subtitle}</AppText>
+                </View>
             
         </View>
+        </TouchableHighlight>
+        
     )
 }
 
 const styles=StyleSheet.create({
     container:{
         flexDirection:'row',
-        marginVertical:40
+       // marginBottom:10,
+        paddingVertical:15
     },
     image:{
         height:70,
         width:70,
         borderRadius:35,
         marginRight:10,
-        marginTop:20
+        //marginTop:10
     },
     text:{
         marginRight:15,
-        marginTop:30,
+        marginTop:5,
     },
     title:{
         fontWeight:'500'

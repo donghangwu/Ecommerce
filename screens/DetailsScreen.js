@@ -14,6 +14,7 @@ export default function DetailsScreen() {
                 $100
                 </AppText>
                 <UserItem 
+                style={styles.useritem}
                 image={require('../assets/maleAvatar.jpg')}
                 title="David"
                 subtitle="5 Listings"/>
@@ -39,6 +40,9 @@ const styles=StyleSheet.create({
     price:{
         color:'#99CC66',
         fontWeight:'bold'
+    },
+    useritem:{
+        marginTop:20
     }
 
 })
