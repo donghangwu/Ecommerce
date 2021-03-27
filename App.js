@@ -16,13 +16,14 @@ import AppCard from './components/AppCard';
 import DetailsScreen from './screens/DetailsScreen';
 import Messages from './screens/Messages';
 import MyAccount from './screens/MyAccount';
+import ListingScreen from './screens/ListingScreen';
 
 export default function App() {
   const name=require('./assets/aa.png')
   console.log(name)
   return (
 
-      <MyAccount/>
+      <ListingScreen/>
 
    
   );

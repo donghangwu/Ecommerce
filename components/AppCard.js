@@ -2,9 +2,9 @@ import React from 'react'
 import { TouchableOpacity,StyleSheet,Image,View } from 'react-native'
 import AppText from './AppText'
 
-export default function AppCard({title,subtitle,image}) {
+export default function AppCard({title,subtitle,image,style}) {
     return (
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={[styles.card,style]}>
             
             <Image style={styles.imagestyle} 
             source={image}></Image>
@@ -22,22 +22,25 @@ export default function AppCard({title,subtitle,image}) {
 
 const styles=StyleSheet.create({
     card:{
+        
         borderRadius:15,
         backgroundColor:'white',
         marginBottom:20,
-        overflow:'hidden'
+        overflow:'hidden',
     },
     imagestyle:{
         width:'100%',
-        height:300,
-        
+        height:200,
+        //resizeMode:'contain'
+           
     },
     textStyle:{
-        padding:20,
+        paddingTop:10,
+        paddingLeft:20
 
     },
     titleStyle:{
-        marginBottom:10
+        marginBottom:5
     },
     subtitleStyle:{
         color:'#99CC66',
