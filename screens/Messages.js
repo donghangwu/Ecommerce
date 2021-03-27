@@ -80,7 +80,7 @@ const styles= StyleSheet.create({
     backgroundColor: '#f9c2ff',
   },
   view:{
-      paddingLeft:10
+      //paddingLeft:10
   }
 
 })

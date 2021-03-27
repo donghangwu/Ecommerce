@@ -34,7 +34,9 @@ const styles=StyleSheet.create({
     container:{
         flexDirection:'row',
        // marginBottom:10,
-        paddingVertical:15
+        paddingVertical:15,
+        paddingLeft:20,
+        backgroundColor:'white'
     },
     image:{
         height:70,

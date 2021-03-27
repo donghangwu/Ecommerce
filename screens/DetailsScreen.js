@@ -13,12 +13,12 @@ export default function DetailsScreen() {
                 <AppText style={styles.price} >
                 $100
                 </AppText>
-                <UserItem 
+            </View>
+            <UserItem 
                 style={styles.useritem}
                 image={require('../assets/maleAvatar.jpg')}
                 title="David"
                 subtitle="5 Listings"/>
-            </View>
         </View>
     )
 }
@@ -42,7 +42,8 @@ const styles=StyleSheet.create({
         fontWeight:'bold'
     },
     useritem:{
-        marginTop:20
+        marginTop:-10,
+        marginLeft:-5
     }
 
 })

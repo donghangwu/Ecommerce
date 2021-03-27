@@ -16,7 +16,7 @@ const styles= StyleSheet.create({
             ios:{
                 
                 fontFamily:"Avenir",
-                fontStyle:'italic'
+                //fontStyle:'italic'
         
             },
             android:{
