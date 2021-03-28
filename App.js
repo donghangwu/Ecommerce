@@ -22,6 +22,7 @@ import ListingScreen from './screens/ListingScreen';
 import SafeScreen from './components/SafeScreen';
 import AppTextInput from './components/AppTextInput';
 import AppPicker from './components/AppPicker';
+import LoginScreen from './screens/LoginScreen';
 
 const categories=[
   {
@@ -40,14 +41,14 @@ export default function App() {
   const [category, setCategory] = useState()
   return (
 
-      <SafeScreen>
-       <AppPicker 
-       selectedItem={category}
-       onSelectItem={item=>setCategory(item)}
-       items={categories} icon='apps' placeholder='Category'/>
-       <AppTextInput icon='email'placeholder='Email'/>
-      </SafeScreen>
-
+      // <SafeScreen>
+      //  <AppPicker 
+      //  selectedItem={category}
+      //  onSelectItem={item=>setCategory(item)}
+      //  items={categories} icon='apps' placeholder='Category'/>
+      //  <AppTextInput icon='email'placeholder='Email'/>
+      // </SafeScreen>
+      <LoginScreen/> 
    
   );
 }

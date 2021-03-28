@@ -26,6 +26,8 @@ const styles= StyleSheet.create({
       marginVertical:15
     },
     textinput:{
+        width:'100%',
+        height:'100%',
         marginHorizontal:10,
     }
 })
