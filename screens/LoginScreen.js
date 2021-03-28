@@ -6,6 +6,7 @@ import SafeScreen from '../components/SafeScreen'
 import {Formik} from 'formik'
 import * as Yup from 'yup'
 import AppText from '../components/AppText'
+import ErrorMessage from '../components/ErrorMessage'
 
 //validation
 const validationSceme=Yup.object().shape({
@@ -44,11 +45,8 @@ export default function LoginScreen() {
                             //formik will keep track of the email varaible
                             onChangeText={handleChange('email')}
                         />
-                        
-                         <AppText style={{color:'red'}}>
-                        {//generate errors for email filed
-                            errors.email}
-                        </AppText>
+                        {/*generate errors for email filed*/}
+                        <ErrorMessage error={errors.email}/>
                         <AppTextInput 
                             autoCorrect={false}
                             autoCapitalize='none'
@@ -58,11 +56,9 @@ export default function LoginScreen() {
                             secureTextEntry={true}
                             icon='lock'
                             onChangeText={handleChange('password')}/>
-                        
-                        <AppText style={{color:'red'}}>
-                        {//generate errors for email filed
-                            errors.password}
-                        </AppText>
+                    
+                        {/*generate errors for password filed*/}
+                        <ErrorMessage error={errors.password}/>
                         <AppButton title='Login' 
                             color='#fc5c65' 
                             onPress={handleSubmit}>
