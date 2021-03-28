@@ -7,6 +7,7 @@ import {Formik} from 'formik'
 import * as Yup from 'yup'
 import AppText from '../components/AppText'
 import ErrorMessage from '../components/ErrorMessage'
+import AppFormField from './AppFormField'
 
 //validation
 const validationSceme=Yup.object().shape({
@@ -32,22 +33,25 @@ export default function LoginScreen() {
                 onSubmit={(value)=>console.log(value)}
                 validationSchema={validationSceme}
                 >
-                {({handleChange,handleSubmit,errors})=>(
+                {({handleChange,handleSubmit,errors,setFieldTouched,touched})=>(
                     //jsx expression
                     <>
-                        <AppTextInput   
+                        <AppFormField   
                             autoCorrect={false}
                             autoCapitalize='none'
                             keyboardType='email-address'
                             placeholder='Email'
                             textContentType='emailAddress'
                             icon='email'
-                            //formik will keep track of the email varaible
-                            onChangeText={handleChange('email')}
+                            name='email'
+                            // //formik will keep track of the email varaible
+                            // onChangeText={handleChange('email')}
+                            // //check if the field is being touched or not->for generate error messages
+                            // onBlur={()=>setFieldTouched('email')}
                         />
-                        {/*generate errors for email filed*/}
-                        <ErrorMessage error={errors.email}/>
-                        <AppTextInput 
+                        {/*generate errors for email filed -> only if it's being touched*/}
+                        {/* <ErrorMessage error={errors.email} visible={touched.email}/> */}
+                        <AppFormField 
                             autoCorrect={false}
                             autoCapitalize='none'
                             keyboardType='email-address'
@@ -55,10 +59,14 @@ export default function LoginScreen() {
                             textContentType='password'
                             secureTextEntry={true}
                             icon='lock'
-                            onChangeText={handleChange('password')}/>
+                            name='password'
+                            // onChangeText={handleChange('password')}
+                            // //check if the field is being touched or not->for generate error messages
+                            // onBlur={()=>setFieldTouched('password')}
+                            />
                     
-                        {/*generate errors for password filed*/}
-                        <ErrorMessage error={errors.password}/>
+                        {/* generate errors for password filed
+                        <ErrorMessage error={errors.password} visible={touched.password}/> */}
                         <AppButton title='Login' 
                             color='#fc5c65' 
                             onPress={handleSubmit}>
