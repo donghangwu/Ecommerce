@@ -2,7 +2,7 @@ import React from 'react'
 import { Text ,StyleSheet, View} from 'react-native'
 import {MaterialCommunityIcons} from '@expo/vector-icons'
 export default function MyIcon({
-    name,size=40,
+    name,size=30,
     backgroundColor='black',
     iconColor='white'}) 
 {
