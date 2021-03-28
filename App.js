@@ -23,6 +23,7 @@ import SafeScreen from './components/SafeScreen';
 import AppTextInput from './components/AppTextInput';
 import AppPicker from './components/AppPicker';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 const categories=[
   {
@@ -48,7 +49,7 @@ export default function App() {
       //  items={categories} icon='apps' placeholder='Category'/>
       //  <AppTextInput icon='email'placeholder='Email'/>
       // </SafeScreen>
-      <LoginScreen/> 
+      <RegisterScreen/> 
    
   );
 }

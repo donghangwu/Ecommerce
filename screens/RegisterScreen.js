@@ -11,24 +11,21 @@ import AppFormField from './AppFormField'
 
 //validation
 const validationSceme=Yup.object().shape({
-    
+    name:Yup.string().required().label("Name"),
     email:Yup.string().required().email().label("Email"),
     password: Yup.string().required().min(4).label('Password')
 })
 
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
     //we dont need those state vairables since we use formik
     // const [email, setEmail] = useState('')
     // const [password, setPassword] = useState('')
     return (
         <SafeScreen style={styles.container}>
-            <Image 
-            style={styles.logo}
-            source={require('../assets/logo.jpg')}/>
 
             <Formik
-                initialValues={{email:'',password:''}}
+                initialValues={{name:'',email:'',password:''}}
                 //onSubmis is when appbutton being pressed->handleSubmit
                 onSubmit={(value)=>console.log(value)}
                 validationSchema={validationSceme}
@@ -37,6 +34,14 @@ export default function LoginScreen() {
                 {({handleChange,handleSubmit,errors,setFieldTouched,touched})=>(
                     //jsx expression
                     <>
+
+                        <AppFormField   
+                            autoCorrect={false}
+                            autoCapitalize='none'
+                            placeholder='Name'
+                            icon='account'
+                            name='name'
+                        />
                         <AppFormField   
                             autoCorrect={false}
                             autoCapitalize='none'
@@ -45,13 +50,7 @@ export default function LoginScreen() {
                             textContentType='emailAddress'
                             icon='email'
                             name='email'
-                            // //formik will keep track of the email varaible
-                            // onChangeText={handleChange('email')}
-                            // //check if the field is being touched or not->for generate error messages
-                            // onBlur={()=>setFieldTouched('email')}
                         />
-                        {/*generate errors for email filed -> only if it's being touched*/}
-                        {/* <ErrorMessage error={errors.email} visible={touched.email}/> */}
                         <AppFormField 
                             autoCorrect={false}
                             autoCapitalize='none'
@@ -61,12 +60,7 @@ export default function LoginScreen() {
                             secureTextEntry={true}
                             icon='lock'
                             name='password'
-                            // onChangeText={handleChange('password')}
-                            // //check if the field is being touched or not->for generate error messages
-                            // onBlur={()=>setFieldTouched('password')}
                             />
-                        {/* generate errors for password filed
-                        <ErrorMessage error={errors.password} visible={touched.password}/> */}
                         
                         <AppButton title='Login' 
                             color='#fc5c65' 

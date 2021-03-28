@@ -8,6 +8,9 @@ export default function AppTextInput({icon,style,...otherProps}) {
     return (
         <View style={[styles.container]}>
             {icon && <MyIcon
+            backgroundColor={'#f8f4f4'}
+            size={40}
+            iconColor={'black'}
             name = {icon}/>}
             <TextInput 
             {...otherProps}
