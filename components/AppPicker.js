@@ -31,7 +31,7 @@ export default function AppPicker({icon,items,placeholder,onSelectItem,selectedI
             </TouchableWithoutFeedback>
 
             <Modal visible={modalVisible} animationType="slide">
-                <SafeScreen>  
+                <SafeScreen >  
                 <Button title="Close" onPress={()=>setModalVisible(false)}/>
                 <FlatList data={items}
                     keyExtractor={item=>item.value.toString()}
@@ -61,5 +61,11 @@ const styles= StyleSheet.create({
     text:{
         flex:1,
         marginLeft:10
+    },
+    dropbox:{
+        flex:0.5,
+        position:'absolute',
+        top:'50%'
     }
+
 })
