@@ -17,7 +17,7 @@ export default function Messages() {
     const [messages, setMessages] = useState([
     {
         id:1,
-        title:'T1',
+        title:'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaazzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz',
         description:'D1',
         image:require('../assets/maleAvatar.jpg')
     },
